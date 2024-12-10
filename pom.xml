@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- POM version and model version -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Parent project setup for Spring Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.0</version>
+		<relativePath/> <!-- Inherit parent from the Spring Boot starter project -->
+	</parent>
+
+	<!-- Project coordinates -->
+	<groupId>net.javaguides</groupId>
+	<artifactId>springboot-kafka-real-world-project</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>springboot-kafka-real-world-project</name>
+	<description>Demo project for Spring Boot and Kafka integration</description>
+	<modules>
+		<module>kafka-producer-wikimedia</module>
+		<module>kafka-consumer-database</module>
+	</modules>
+	<packaging>pom</packaging> <!-- This is the parent project, so it's a POM -->
+
+
+	<properties>
+		<java.version>17</java.version> <!-- Java version for the project -->
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- Spring Kafka dependency for Kafka integration -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Kafka Test Dependency for unit tests (if needed) -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Add more common dependencies here if required -->
+	</dependencies>
+
+	<!-- Build section: Configure the build and plugins for the parent project -->
+	<build>
+		<plugins>
+			<!-- Spring Boot Maven Plugin for packaging and running Spring Boot apps -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
